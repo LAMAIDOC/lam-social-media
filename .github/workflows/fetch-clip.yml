@@ -15,7 +15,8 @@ jobs:
   fetch:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Get the repo
+        run: git clone -q --depth 5 "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" . 
       - name: Download and shrink
         run: |
           set -e
