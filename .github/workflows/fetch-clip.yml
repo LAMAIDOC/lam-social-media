@@ -1,0 +1,40 @@
+# Copies a finished Higgsfield clip into clips/ (social/higgsfield/make_media.py collect() pushes fetch/<key>.json).
+# Runs on GitHub's machines, so big files and slow encodes never hit the Composio workbench's 180 second limit.
+# fetch/<key>.json: {"url": "<Higgsfield result_url>", "talk": true|false}
+name: Fetch clip
+on:
+  push:
+    paths: ["fetch/*.json"]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: fetch-clip
+  cancel-in-progress: false
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download and shrink
+        run: |
+          set -e
+          shopt -s nullglob
+          for f in fetch/*.json; do
+            key=$(basename "$f" .json)
+            if ! [[ "$key" =~ ^[A-Za-z0-9_-]{1,120}$ ]]; then echo "bad key $key"; git rm -q "$f"; continue; fi
+            url=$(jq -r .url "$f"); talk=$(jq -r '.talk // false' "$f")
+            # Only Higgsfield's own file host.
+            if ! [[ "$url" =~ ^https://d8j0ntlcm91z4\.cloudfront\.net/[A-Za-z0-9_./-]+\.mp4$ ]]; then echo "refused $url"; git rm -q "$f"; continue; fi
+            curl -sSfL --max-time 300 "$url" -o raw.mp4
+            if [ "$talk" = "true" ]; then audio="-c:a aac -b:a 128k"; else audio="-an"; fi
+            ffmpeg -y -loglevel error -i raw.mp4 $audio -vf "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,fps=30" \
+              -c:v libx264 -preset slow -crf 24 -pix_fmt yuv420p -movflags +faststart "clips/$key.mp4"
+            rm -f raw.mp4
+            git rm -q "$f"
+            git add "clips/$key.mp4"
+          done
+      - name: Commit
+        run: |
+          git config user.name "LAM social"; git config user.email "ambassadors@littleangelmedical.com"
+          git diff --cached --quiet || { git commit -qm "Fetched clips"; git pull -q --rebase; git push -q; }
