@@ -4,8 +4,8 @@ Real screen recordings of the LAM app, from Chad's Drive folder "App demos"
 (https://drive.google.com/drive/folders/1R0XtQnr8c8xTNg5yaPjvFrer39w_PxB3, added Oct 31, 2026).
 
 - `demos/*.mp4`: the full recordings, 720 px wide (fetched by the "Fetch demo" action).
-- `clips/demo-*.mp4` + `photos/demo-*.jpg`: ready snippets, 1080x1920, silent, the phone screen centred on LAM navy
-  with room above for a card. Use them in a Social Piece like any clip: `photo: demo-<name> | ...` and `clip: demo-<name> | ...`.
+- `clips/demo-*.mp4` + `photos/demo-*.jpg`: ready snippets, 1080x1920, silent, the phone screen low on LAM navy
+  with room above it for the card. Use them in a Social Piece like any clip: `photo: demo-<name> | ...` and `clip: demo-<name> | ...`.
 
 | Snippet | Seconds | What it shows | Good for |
 |---|---|---|---|
@@ -28,8 +28,9 @@ Rules (never break):
 - Child names in the recordings (Monza, James, Jessica, William) are sample profiles; keep them small or out of frame,
   and never say them in words or captions.
 - The "Eve" commentary recordings have a voice: snippets are cut silent; never use Eve's voice in a post without Chad's OK.
-- New snippet: cut from `demos/<file>.mp4` with ffmpeg (see `scripts` in the history of this file: scale=-2:1560,
-  pad=1080:1920 on 0x0B1F3A, 30 fps, no audio), look at every second of it, then add a row here.
+- New snippet: cut from `demos/<file>.mp4` with ffmpeg: `-an -vf "scale=-2:1380,pad=1080:1920:(ow-iw)/2:420:color=0x0B1F3A,fps=30"`
+  (the phone sits low so the card above it never covers the screen), save the first frame as `photos/<key>.jpg`,
+  look at every second of it, then add a row here.
 
 Full recordings: bloom_demo, growth_demo, med_tracker_demo, wellness_check (LIA symptom flow), skin_check,
 throat_check (landscape, black bars), general_app (vitals, cough, throat, LIA), eve_* (same flows with Eve's voice).
