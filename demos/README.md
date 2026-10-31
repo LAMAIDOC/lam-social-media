@@ -14,6 +14,8 @@ Real screen recordings of the LAM app, from Chad's Drive folder "App demos"
 | demo-throat-setup | 6 | "Let's get set up" for the throat check, then the camera in the mouth | Throat |
 | demo-throat-analyzing | 5 | "Analyzing Throat" | Throat |
 | demo-cough-record | 6 | Cough check recording | Cough |
+| demo-lung-guide | 6 | "How to check your child's lungs", then placing the phone on the upper back | Lung (Breathing) |
+| demo-lung-analyzing | 2.6 | "Analyzing Audio" for the lung check | Lung (Breathing) |
 | demo-vitals-record | 6 | Vitals check measuring | Vitals |
 | demo-lia-questions | 6 | LIA symptom picker (fever, cough, sore throat...) | LIA, "a few simple questions" |
 | demo-growth-chart | 6 | Growth chart: height on her own curve | Growth |
@@ -24,7 +26,7 @@ Rules (never break):
   "Pertussis", "Granuloma annulare", "See a doctor within 24 hours"): it reads as a diagnosis. Show the steps
   (photo, questions, recording, analyzing), the next step card only without condition names.
 - Never show a real medicine name (the medication log demo shows a real drug name: no snippet from it yet).
-- Never the Lung check (not live), Ear check or Health Story.
+- Never the Ear check or Health Story (not live). The Lung check went live Oct 31, 2026: its result screen says "Abnormal sounds", so never show it.
 - Child names in the recordings (Monza, James, Jessica, William) are sample profiles; keep them small or out of frame,
   and never say them in words or captions.
 - The "Eve" commentary recordings have a voice: snippets are cut silent; never use Eve's voice in a post without Chad's OK.
