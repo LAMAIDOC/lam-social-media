@@ -1,0 +1,46 @@
+# Copies an app demo screen recording into demos/ (Chad's Drive folder "App demos").
+# The Composio workbench downloads the file from Drive (GOOGLEDRIVE_DOWNLOAD_FILE gives a short-lived link)
+# and pushes demofetch/<name>.json: {"url": "<that link>"}. This runs on GitHub's machines, so big files are fine.
+name: Fetch demo
+on:
+  push:
+    paths: ["demofetch/*.json"]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: fetch-demo
+  cancel-in-progress: false
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the repo
+        run: git clone -q --depth 5 "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" .
+      - name: Download and shrink
+        run: |
+          set +e
+          command -v ffmpeg >/dev/null || { sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null; }
+          mkdir -p demos
+          shopt -s nullglob
+          for f in demofetch/*.json; do
+            key=$(basename "$f" .json)
+            if ! [[ "$key" =~ ^[A-Za-z0-9_-]{1,80}$ ]]; then git rm -q "$f"; continue; fi
+            url=$(jq -r .url "$f")
+            # Only Composio's temporary file host (Drive downloads made by the workbench).
+            if ! [[ "$url" =~ ^https://temp\.[a-f0-9]+\.r2\.cloudflarestorage\.com/ ]]; then echo "refused: not a Composio download link" > "demofetch/$key.err"; git rm -q "$f"; git add "demofetch/$key.err"; continue; fi
+            code=$(curl -sSL --max-time 600 -o raw.mp4 -w "%{http_code}" "$url" 2> curl.err)
+            if [ "$code" != "200" ]; then { echo "download failed: HTTP $code"; cat curl.err; } > "demofetch/$key.err"; git add "demofetch/$key.err"; continue; fi
+            # 720 px wide, keeps the aspect and the voice (commentary versions), small enough to keep in the repo.
+            if ffmpeg -y -loglevel error -i raw.mp4 -vf "scale=720:-2,fps=30" -c:v libx264 -preset slow -crf 26 -pix_fmt yuv420p \
+                 -c:a aac -b:a 96k -movflags +faststart "demos/$key.mp4" 2> ff.err; then
+              git rm -q "$f"; git rm -q --ignore-unmatch "demofetch/$key.err"; git add "demos/$key.mp4"
+            else
+              { echo "ffmpeg failed:"; tail -5 ff.err; } > "demofetch/$key.err"; git add "demofetch/$key.err"
+            fi
+            rm -f raw.mp4
+          done
+      - name: Commit
+        run: |
+          git config user.name "LAM social"; git config user.email "ambassadors@littleangelmedical.com"
+          git diff --cached --quiet || { git commit -qm "Fetched app demos"; git pull -q --rebase; git push -q; }
