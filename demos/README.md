@@ -18,6 +18,7 @@ Real screen recordings of the LAM app, from Chad's Drive folder "App demos"
 | demo-lung-analyzing | 2.6 | "Analyzing Audio" for the lung check | Lung (Breathing) |
 | demo-vitals-record | 6 | Vitals check measuring | Vitals |
 | demo-lia-questions | 6 | LIA symptom picker (fever, cough, sore throat...) | LIA, "a few simple questions" |
+| demo-lia-fever | 5.2 | The same picker from 0.8 s: Fever ticked, then Cough and Sore Throat; no child name, recording dot covered (Nov 8, 2026) | Fever, "tap her symptoms" |
 | demo-growth-chart | 6 | Growth chart: height on her own curve | Growth |
 | demo-bloom-card | 6 | "Today's insight is ready", the daily Bloom card | Bloom, milestones |
 
