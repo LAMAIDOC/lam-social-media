@@ -19,6 +19,7 @@ Real screen recordings of the LAM app, from Chad's Drive folder "App demos"
 | demo-vitals-record | 6 | Vitals check measuring | Vitals |
 | demo-lia-questions | 6 | LIA symptom picker (fever, cough, sore throat...) | LIA, "a few simple questions" |
 | demo-lia-fever | 5.2 | The same picker from 0.8 s: Fever ticked, then Cough and Sore Throat; no child name, recording dot covered (Nov 8, 2026) | Fever, "tap her symptoms" |
+| demo-throat-scan | 3 | Throat check scan from "Throat AI Check" (Videos no commentary): the green guide over an open mouth, progress 25% to 50%; recording dot covered; no result screen (Nov 8, 2026) | Throat, "check her throat" |
 | demo-growth-chart | 6 | Growth chart: height on her own curve | Growth |
 | demo-bloom-card | 6 | "Today's insight is ready", the daily Bloom card | Bloom, milestones |
 
