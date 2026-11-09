@@ -22,6 +22,7 @@ Real screen recordings of the LAM app, from Chad's Drive folder "App demos"
 | demo-throat-scan | 3 | Throat check scan from "Throat AI Check" (Videos no commentary): the green guide over an open mouth, progress 25% to 50%; recording dot covered; no result screen (Nov 8, 2026) | Throat, "check her throat" |
 | demo-growth-chart | 6 | Growth chart: height on her own curve | Growth |
 | demo-bloom-card | 6 | "Today's insight is ready", the daily Bloom card | Bloom, milestones |
+| demo-head-check | 2 | Head Check guide from "LAM - Check Reel" with our cast baby's crown (AI photo) inside the real outline and center line; the head tilts gently, the shoulders sway; the LAM letters and the 9:41 clock redrawn; no result screen (Chad, Nov 9, 2026) | Head shape, "one photo of the top of the head" |
 
 Rules (never break):
 - Never show a result screen that names a condition or gives a verdict (for example "Strep throat unlikely",
