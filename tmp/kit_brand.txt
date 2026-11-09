@@ -1,0 +1,24 @@
+=== page 1 ===
+LAM Brand Kit
+Everything you need to show LAM in your posts. Logo files are in the attached zip.
+Logos
+LAM_logo.png: for light backgrounds
+LAM_logo_white.png: for dark or busy backgrounds
+LAM_wings.png: the wings on their own, for small spaces and stickers
+LAM_wings_square.png: the wings on white, ready for a profile picture or Story
+Colors
+Wing blue
+#84D2E5
+Wing pink
+#FF9FAA
+Halo yellow
+#FFD04C
+Navy (text)
+#00194F
+Outline grey
+#666666
+Keep it simple
+• Use the logo as it is: don't stretch, recolor, rotate or add effects. Leave some empty space around it.
+• Call the app LAM (said like "lamb") and tag @littleangelmedical.
+• Fonts are optional. If you want to match us: Bebas Neue for headlines, Inter for text (both free on Google Fonts).
+• Questions or need another format? ambassadors@littleangelmedical.com
