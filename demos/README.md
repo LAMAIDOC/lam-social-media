@@ -23,6 +23,12 @@ Real screen recordings of the LAM app, from Chad's Drive folder "App demos"
 | demo-growth-chart | 6 | Growth chart: height on her own curve | Growth |
 | demo-bloom-card | 6 | "Today's insight is ready", the daily Bloom card | Bloom, milestones |
 | demo-head-check | 2 | Head Check guide from "LAM - Check Reel" with our cast baby's crown (AI photo) inside the real outline and center line; the head tilts gently, the shoulders sway; the LAM letters and the 9:41 clock redrawn; no result screen (Chad, Nov 9, 2026) | Head shape, "one photo of the top of the head" |
+| demo-lia-followup | 6 | LIA follow-up from wellness_check 41.5 s: noisy breathing ticked, then "To make sure I've got this right... it can be a sign of something urgent", No, not certain, then "Ok, got it. Now let's look more closely at the fever" (sample name James in the text; recording dot covered; Nov 15, 2026) | LIA, "it asks what a nurse would ask" |
+| demo-lia-checks | 6.5 | From wellness_check 128 s: "Based on what you shared... Recommended checks: 3" (Vitals, Cough, Throat), then the Assessment Progress screen 1/3, 2/3, 3/3 (the throat line says "possible strep patterns": a feature description, not a result; sample name James; Nov 15, 2026) | LIA, "it tells you which checks to do" |
+| demo-care-next | 4.5 | Vitals care recommendation from general_app 45.5 s: "oxygen level looks reassuring", then "What to do now" (recheck breathing, offer fluids, rest) scrolling to "Get medical care soon if"; stops before the Urgent warning (sample name Jessica; Nov 15, 2026) | Any check, "a clear next step" |
+| demo-lia-journey | 10.5 | The whole flow in one clip: symptom picker (demo-lia-fever 0 to 2 s), the follow-up question, Recommended checks, Assessment Progress, the vitals countdown, then the What to do now card (Nov 15, 2026) | LIA, Fever, "from worry to a plan" |
+
+Status of the Nov 15, 2026 snippets (demo-lia-followup, demo-lia-checks, demo-care-next, demo-lia-journey): waiting for Chad's OK on the stills; don't use them in a piece until this line is removed.
 
 Rules (never break):
 - Never show a result screen that names a condition or gives a verdict (for example "Strep throat unlikely",
