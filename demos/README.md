@@ -28,7 +28,7 @@ Real screen recordings of the LAM app, from Chad's Drive folder "App demos"
 | demo-care-next | 4.5 | Vitals care recommendation from general_app 45.5 s: "oxygen level looks reassuring", then "What to do now" (recheck breathing, offer fluids, rest) scrolling to "Get medical care soon if"; stops before the Urgent warning (sample name Jessica; Nov 15, 2026) | Any check, "a clear next step" |
 | demo-lia-journey | 10.5 | The whole flow in one clip: symptom picker (demo-lia-fever 0 to 2 s), the follow-up question, Recommended checks, Assessment Progress, the vitals countdown, then the What to do now card (Nov 15, 2026) | LIA, Fever, "from worry to a plan" |
 
-Status of the Nov 15, 2026 snippets (demo-lia-followup, demo-lia-checks, demo-care-next, demo-lia-journey): waiting for Chad's OK on the stills; don't use them in a piece until this line is removed.
+Nov 15, 2026 snippets (demo-lia-followup, demo-lia-checks, demo-care-next, demo-lia-journey): approved by Chad on Nov 15, 2026, sample names and the "strep patterns" line included.
 
 Rules (never break):
 - Never show a result screen that names a condition or gives a verdict (for example "Strep throat unlikely",
