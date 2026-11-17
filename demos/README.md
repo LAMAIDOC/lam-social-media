@@ -33,10 +33,10 @@ Real screen recordings of the LAM app, from Chad's Drive folder "App demos"
 Nov 15, 2026 snippets (demo-lia-followup, demo-lia-checks, demo-care-next, demo-lia-journey): approved by Chad on Nov 15, 2026, sample names and the "strep patterns" line included.
 
 Rules (never break):
-- Never show a result screen that names a condition or gives a verdict (for example "Strep throat unlikely",
-  "Pertussis", "Granuloma annulare", "See a doctor within 24 hours"): it reads as a diagnosis. Show the steps
-  (photo, questions, recording, analyzing), the next step card only without condition names.
-- Never show a real medicine name (the medication log demo shows a real drug name: no snippet from it yet).
+- Result screens (changed Nov 17, 2026, Chad): reassuring results are fine ("Developing well", "No Strep Throat
+  Suspected", "oxygen level looks reassuring"). Never a result that says something is wrong or names a condition the
+  child has (for example "Pertussis", "Granuloma annulare", "Abnormal sounds", "See a doctor within 24 hours").
+- The medication log is fine to show, real medicine names included (changed Nov 17, 2026, Chad).
 - Never the Ear check or Health Story (not live). The Lung check went live Oct 31, 2026: its result screen says "Abnormal sounds", so never show it.
 - Child names in the recordings (Monza, James, Jessica, William) are sample profiles; keep them small or out of frame,
   and never say them in words or captions.
