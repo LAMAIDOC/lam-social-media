@@ -30,6 +30,39 @@ Real screen recordings of the LAM app, from Chad's Drive folder "App demos"
 | demo-care-next | 4.5 | Vitals care recommendation from general_app 45.5 s: "oxygen level looks reassuring", then "What to do now" (recheck breathing, offer fluids, rest) scrolling to "Get medical care soon if"; stops before the Urgent warning (sample name Jessica; Nov 15, 2026) | Any check, "a clear next step" |
 | demo-lia-journey | 10.5 | The whole flow in one clip: symptom picker (demo-lia-fever 0 to 2 s), the follow-up question, Recommended checks, Assessment Progress, the vitals countdown, then the What to do now card (Nov 15, 2026) | LIA, Fever, "from worry to a plan" |
 
+**Full feature set (Nov 17, 2026, approved by Chad).** One clip per check and feature, also in Chad's Drive folder
+"LAM demo clips (ready to use)" (https://drive.google.com/drive/folders/1MuaMUCAr-4sQphd3iuq1Y1czor_OPx9E).
+Built by `demos/build_demos.py` (the status bar is cropped off every recording, so no clock, recording dot or
+camera light; the sample name on the throat result is covered). Rebuild with `python3 demos/build_demos.py`.
+
+| Snippet | Seconds | What it shows | Good for |
+|---|---|---|---|
+| demo-check-head | 4.4 | Head scan, then the real **"Developing Well"** result (from the LAM Check Reel, with its phone frame) | Head shape, App first |
+| demo-check-throat | 6.8 | Camera in the mouth at 50%, "Analyzing Throat", then the real **"Strep Throat Unlikely"** result (Chad: only this 8 to 15 s part) | Throat, App first |
+| demo-check-cough | 12.8 | How to record, recording, Submit, "Analyzing Audio"; no result (it names a condition) | Cough |
+| demo-check-vitals | 13.1 | Ready to record, countdown (3x), "Analyzing Vitals", then the care note "oxygen level looks reassuring" (sample name Jessica in the text) | Vitals, fever |
+| demo-check-skin | 10.5 | Capture, the abdomen rash photo, "Analyzing Skin"; no result (it names a condition) | Skin, rash |
+| demo-check-lung | 10.8 | How to check your child's lungs, then two back positions with countdowns; no result ("Abnormal sounds") | Lung, breathing |
+| demo-lia-regular-checkup | 9.8 | LIA "Regular Checkup" intro, then the symptom picker | LIA, checkup |
+| demo-lia-to-checks | 10.5 | Symptoms ticked, then Recommended checks: 3, then Assessment Progress | LIA, "it tells you what to check" |
+| demo-lia-throat-questions | 8 | LIA sore throat questions (white spots, swollen tonsils, sore neck) | Throat, LIA |
+| demo-lia-bloom-chat | 6.7 | LIA explaining a Bloom card (pretend play), with Tell me more and What can I do | LIA, Bloom |
+| demo-growth-height | 9 | Growth chart, Add New Height, the new point on her curve | Growth |
+| demo-growth-weight | 11 | Add New Weight, the curve and the Weight Growth Log | Growth |
+| demo-growth-head | 8.8 | Add New Head Size and the curve | Growth, head |
+| demo-milestone-checklist | 8.2 | Milestones by age, ticking Gross Motor milestones | Milestones |
+| demo-milestone-congrats | 7.1 | The last milestone ticked, then "Congratulations! All 6 months old milestones are now completed!" | Milestones, proud moment |
+| demo-milestone-tracker | 6.8 | "About Milestones Tracker", then the list by age | Milestones |
+| demo-bloom-today | 11.8 | "Today's insight is ready", then swiping through the card | Bloom |
+| demo-bloom-share | 6.7 | Share Bloom Insights card with colours and share buttons | Bloom, sharing |
+| demo-med-dose | 9.1 | Medicine on Home, Med Tracker, the dose ticked off | Medication |
+| demo-med-progress | 4.7 | Daily Doses and the Med Progress calendar | Medication |
+
+- App first pieces use demo-check-head and demo-check-throat back to back: the two real reassuring results we have.
+- The medication clips show **Paxil** (an adult antidepressant with a US warning for children and teens): flagged to Chad
+  Nov 17, 2026; prefer another clip in a child's story until it is re-recorded or Chad says it is fine.
+- Sample names (James, Monza, Jessica) stay small in the text, as in the Nov 15 clips; never say them.
+
 Nov 15, 2026 snippets (demo-lia-followup, demo-lia-checks, demo-care-next, demo-lia-journey): approved by Chad on Nov 15, 2026, sample names and the "strep patterns" line included.
 
 Rules (never break):
@@ -47,3 +80,4 @@ Rules (never break):
 
 Full recordings: bloom_demo, growth_demo, med_tracker_demo, wellness_check (LIA symptom flow), skin_check,
 throat_check (landscape, black bars), general_app (vitals, cough, throat, LIA), eve_* (same flows with Eve's voice).
+Added Nov 17, 2026: milestone_demo, growth_demo_v2, med_tracker_complete (720 px), check_reel (the LAM Check Reel ad, 4K).
