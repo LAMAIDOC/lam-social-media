@@ -55,12 +55,14 @@ camera light; the sample name on the throat result is covered). Rebuild with `py
 | demo-milestone-tracker | 6.8 | "About Milestones Tracker", then the list by age | Milestones |
 | demo-bloom-today | 11.8 | "Today's insight is ready", then swiping through the card | Bloom |
 | demo-bloom-share | 6.7 | Share Bloom Insights card with colours and share buttons | Bloom, sharing |
-| demo-med-dose | 9.1 | Medicine on Home, Med Tracker, the dose ticked off | Medication |
-| demo-med-progress | 4.7 | Daily Doses and the Med Progress calendar | Medication |
+| demo-med-add | 13.7 | Add New Medication: Amoxicillin (Oral Liquid), 10 ml, twice a day, first dose 6:00 PM, 7 days, then Review and Save; ends on Med Tracker with the dose listed (med_tracker_v2, Nov 22, 2026) | Medication, "set it up once" |
+| demo-med-dose | 8.6 | Med Tracker: Amoxicillin 10 ml at 6:00 PM, then the dose ticked off; holds on the tick (med_tracker_v2, Nov 22, 2026) | Medication |
+| demo-med-progress | 7.3 | Med Progress calendar, then the Share Medication Progress card (med_tracker_v2, Nov 22, 2026) | Medication, sharing |
 
 - App first pieces use demo-check-head and demo-check-throat back to back: the two real reassuring results we have.
-- The medication clips show **Paxil** (an adult antidepressant with a US warning for children and teens): flagged to Chad
-  Nov 17, 2026; prefer another clip in a child's story until it is re-recorded or Chad says it is fine.
+- The medication clips were remade on Nov 22, 2026 from Chad's new recording (med_tracker_v2: Amoxicillin, a common
+  children's antibiotic), replacing the Paxil ones. The old Drive copies are renamed "OLD Paxil - ..."; never use them.
+  The recording's iOS share sheet (64-65.5 s) shows personal contacts: never cut from it.
 - Sample names (James, Monza, Jessica) stay small in the text, as in the Nov 15 clips; never say them.
 
 Nov 15, 2026 snippets (demo-lia-followup, demo-lia-checks, demo-care-next, demo-lia-journey): approved by Chad on Nov 15, 2026, sample names and the "strep patterns" line included.
@@ -81,3 +83,4 @@ Rules (never break):
 Full recordings: bloom_demo, growth_demo, med_tracker_demo, wellness_check (LIA symptom flow), skin_check,
 throat_check (landscape, black bars), general_app (vitals, cough, throat, LIA), eve_* (same flows with Eve's voice).
 Added Nov 17, 2026: milestone_demo, growth_demo_v2, med_tracker_complete (720 px), check_reel (the LAM Check Reel ad, 4K).
+Added Nov 22, 2026: med_tracker_v2 (Chad's "Med Tracker No Audio", 384 px wide, status bar 50 px: CROP_TOP in build_demos.py).

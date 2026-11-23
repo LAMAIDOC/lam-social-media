@@ -9,6 +9,8 @@ os.makedirs(OUT, exist_ok=True)
 REEL = os.path.join(D, "check_reel.mp4")
 
 DOT = "drawbox=x=212:y=30:w=44:h=40:color=black:t=fill"
+CROP_TOP = {"med_tracker_v2": 50}  # 384 px wide recording
+
 COVERS = {  # always applied per source (720 px wide coordinates)
     "general_app": [DOT, "drawbox=x=384:y=36:w=36:h=36:color=black:t=fill"],
     "wellness_check": [DOT],
@@ -49,14 +51,17 @@ CLIPS = {
   "demo-milestone-congrats": [("milestone_demo", 30.0, 38.5, 1.2, [])],
   "demo-milestone-tracker": [("milestone_demo", 14.0, 17.0, 1, []), ("milestone_demo", 18.0, 22.0, 1, [])],
   # ---------------- medication
-  "demo-med-dose": [("med_tracker_complete", 3.5, 6.0, 1, []), ("med_tracker_complete", 9.7, 13.0, 1, []), ("med_tracker_complete", 19.0, 22.8, 1, [])],
-  "demo-med-progress": [("med_tracker_complete", 10.0, 15.6, 1.2, [])],
+  # Nov 22, 2026: med clips remade from med_tracker_v2 (Amoxicillin) to replace the Paxil ones
+  "demo-med-add": [("med_tracker_v2", 26.0, 32.0, 1.5, []), ("med_tracker_v2", 32.0, 45.0, 2.5, []), ("med_tracker_v2", 45.0, 52.5, 1.5, [])],
+  "demo-med-dose": [("med_tracker_v2", 52.0, 57.0, 1, []), ("med_tracker_v2", 72.4, 75.0, 1, [])],
+  "demo-med-progress": [("med_tracker_v2", 55.0, 58.0, 1, []), ("med_tracker_v2", 59.3, 63.8, 1, [])],
   # ---------------- Bloom
   "demo-bloom-today": [("bloom_demo", 24.0, 28.0, 1, []), ("bloom_demo", 34.0, 46.0, 1.5, [])],
   "demo-bloom-share": [("bloom_demo", 52.0, 60.0, 1.2, [])],
 }
 
-TRIM = {"demo-check-throat": (8, 15)}  # Chad, Nov 17, 2026: only 8 to 15 s of the full flow
+TRIM = {"demo-check-throat": (8, 15)}  # Chad, Nov 17, 2026
+HOLD = {"demo-med-dose": 1.2}  # hold the last frame (the ticked dose) this many seconds  # Chad, Nov 17, 2026: only 8 to 15 s of the full flow
 
 def seg_cmd(src, a, b, speed, extra, outp):
     if src == "REEL":
@@ -67,7 +72,8 @@ def seg_cmd(src, a, b, speed, extra, outp):
         inp = ["-ss", str(a), "-i", REEL, "-frames:v", "1000"]
     else:
         covers = COVERS.get(src, []) + extra
-        vf = ",".join(extra + ["crop=iw:ih-92:0:92", "scale=-2:1380"])
+        top = CROP_TOP.get(src, 92)  # status bar height in source pixels
+        vf = ",".join(extra + [f"crop=iw:ih-{top}:0:{top}", "scale=-2:1380"])
         inp = ["-ss", str(a), "-t", str(b - a), "-i", f"{D}/{src}.mp4"]
     if speed != 1:
         vf += f",setpts=PTS/{speed}"
@@ -106,5 +112,9 @@ for n, s in CLIPS.items():
     if n in TRIM:
         a, b = TRIM[n]; f = f"{OUT}/{n}.mp4"; t = f"{OUT}/_{n}_t.mp4"
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(a), "-to", str(b), "-i", f, "-an", "-c:v", "libx264", "-crf", "20", "-pix_fmt", "yuv420p", "-movflags", "+faststart", t], check=True)
+        os.replace(t, f)
+    if n in HOLD:
+        f = f"{OUT}/{n}.mp4"; t = f"{OUT}/_{n}_h.mp4"
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", f, "-vf", f"tpad=stop_mode=clone:stop_duration={HOLD[n]}", "-an", "-c:v", "libx264", "-crf", "20", "-pix_fmt", "yuv420p", "-movflags", "+faststart", t], check=True)
         os.replace(t, f)
     print(n, subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", f"{OUT}/{n}.mp4"]).decode().strip())
