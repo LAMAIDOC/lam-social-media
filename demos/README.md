@@ -56,7 +56,7 @@ camera light; the sample name on the throat result is covered). Rebuild with `py
 | demo-bloom-today | 11.8 | "Today's insight is ready", then swiping through the card | Bloom |
 | demo-bloom-share | 6.7 | Share Bloom Insights card with colours and share buttons | Bloom, sharing |
 | demo-med-add | 13.7 | Add New Medication: Amoxicillin (Oral Liquid), 10 ml, twice a day, first dose 6:00 PM, 7 days, then Review and Save; ends on Med Tracker with the dose listed (med_tracker_v2, Nov 22, 2026) | Medication, "set it up once" |
-| demo-med-dose | 8.6 | Med Tracker: Amoxicillin 10 ml at 6:00 PM, then the dose ticked off; holds on the tick (med_tracker_v2, Nov 22, 2026) | Medication |
+| demo-med-dose | 8.6 | Med Tracker: Amoxicillin 10 ml at 6:00 PM, then the dose ticked off; holds on the tick (med_tracker_v2, Nov 22, 2026). **Chad's pick (Nov 22, 2026): the first choice for any medication piece** | Medication |
 | demo-med-progress | 7.3 | Med Progress calendar, then the Share Medication Progress card (med_tracker_v2, Nov 22, 2026) | Medication, sharing |
 
 - App first pieces use demo-check-head and demo-check-throat back to back: the two real reassuring results we have.
